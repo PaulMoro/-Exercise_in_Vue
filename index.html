@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Ejercicio 2</title>
+</head>
+<body>
+  <header id="header">
+    <h1>{{ title }}</h1>
+    <h3>{{ subtitle }}</h3>
+    <nav>
+      <ul>
+        <li v-for="p in navPoint" v-bind:key="p">
+          <p>{{ p }}</p>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section id="main" class="main">
+    <div class="main_content">
+      <h4>
+        {{ sector }}
+      </h4>
+      <h2>
+        {{ title }}
+      </h2>
+      <p>
+        {{ paragraph }}
+      </p>
+    </div>
+    <img v-bind:src="img" v-bind:alt="alt" class="main_image">
+  </section>
+  <section id="post" class="articles">
+    <div v-for="(d, i) in dataPost" v-bind:key="d.date" class="article">
+      <div class="articule_data">
+        <p class="articule_data_date">{{ d.date }}</p>
+        <p class="articule_data_author">Por <a href="#">{{ d.author }}</a></p>
+        <p class="articule_data_coment">{{ d.commentNum }} comentarios</p>
+      </div>
+      <div class="articule_content">
+        <h2>{{ d.title }}</h2>
+        <p>{{ d.abstract }}</p>
+        <a href="#">Leer más</a>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section id="cat" class="devilCat">
+    <img v-bind:src="img" v-bind:alt="alt">
+    <p>{{ paragraph }}</p>
+  </section>
+  <footer>
+    <ul>
+      <li>
+        <img src="/style/images/twitter.png" alt="Twitter">
+      </li>
+      <li>
+        <img src="/style/images/facebook.png" alt="Facebook">
+      </li>
+      <li>
+        <img src="/style/images/spotify.png" alt="Spotify">
+      </li>
+      <li>
+        <img src="/style/images/youtube.png" alt="YouTube">
+      </li>
+    </ul>
+    <p>© 2020. Todos los derechos reservados.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="./js/header.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/post.js"></script>
+  <script src="./js/cat.js"></script>
+</body>
+</html>
